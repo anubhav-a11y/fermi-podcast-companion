@@ -1,17 +1,26 @@
-# --- core (always needed)
+# Everything needed to RUN the shipped configuration -- the Streamlit UI, the
+# CLI, and `make eval` -- against the committed artifacts.
+#
+# This file is deliberately the *runtime* set. Rebuilding artifacts from the
+# raw audio additionally needs requirements-ingest.txt (a Whisper backend and
+# whichever provider you transcribe with).
+#
+# CPU-only torch keeps the install ~200 MB instead of ~2 GB; embeddings run
+# on CPU and measured peak RSS for the whole app is ~415 MB.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# --- core
 numpy>=1.26
 python-dotenv>=1.0
 PyYAML>=6.0
 streamlit>=1.36
 
-# --- LLM providers: install AT LEAST ONE
-google-genai>=1.0     # Gemini: chat + embeddings, generous free tier
-anthropic>=0.40
-openai>=1.40          # chat + embeddings (text-embedding-3-small)
-# groq>=0.11          # fast hosted chat, and hosted Whisper
+# --- retrieval
+rank-bm25>=0.2                 # lexical half of the hybrid (use_bm25_hybrid)
+torch>=2.2                     # required by sentence-transformers
+sentence-transformers>=3.0     # all-MiniLM-L6-v2, matches the committed index
 
-# --- transcription: faster-whisper needs no API key and gives exact timestamps
-faster-whisper>=1.0
-
-# --- optional: free local embeddings, no API calls
-# sentence-transformers>=3.0   # FERMI_EMBED_PROVIDER=local
+# --- chat provider
+# OpenRouter (the default, FERMI_LLM_PROVIDER=openrouter) speaks the OpenAI
+# wire protocol, so this one package covers both.
+openai>=1.40

@@ -1,0 +1,11 @@
+# Only needed to rebuild artifacts/ from the raw audio (`make ingest`).
+# Running the shipped system from the committed artifacts does not need any
+# of this -- see requirements.txt.
+
+# --- transcription: pick one
+groq>=0.11              # hosted whisper-large-v3-turbo; ~12s per episode
+faster-whisper>=1.0     # local, no API key, near real time on CPU
+
+# --- alternative chat/embedding providers (all optional)
+google-genai>=1.0       # Gemini: chat + embeddings
+anthropic>=0.40         # Anthropic: chat only (no embedding model)

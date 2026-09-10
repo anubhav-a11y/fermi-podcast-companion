@@ -1,4 +1,4 @@
-.PHONY: help setup check fixture smoke ingest transcribe chunk enrich index peek run chat eval-baseline eval-improved eval report ablate audio-web clean-runs clean-artifacts
+.PHONY: help setup setup-ingest check fixture smoke ingest transcribe chunk enrich index peek run chat eval-baseline eval-improved eval report ablate audio-web clean-runs clean-artifacts
 
 PY ?= python
 VENV ?= .venv
@@ -8,7 +8,7 @@ help:
 	@echo "  Fermi Podcast Companion"
 	@echo ""
 	@echo "  SETUP"
-	@echo "    make setup            create .venv and install dependencies"
+	@echo "    make setup            create .venv, install runtime deps, copy .env.example\n    make setup-ingest     extra deps to rebuild artifacts from raw audio"
 	@echo "    make check            verify keys, ffmpeg, audio files, artifacts"
 	@echo ""
 	@echo "  OFFLINE TEST (no keys, no audio, ~10s)"
@@ -39,6 +39,14 @@ setup:
 	@echo "Done. Now:  1) put your API keys in .env"
 	@echo "            2) source $(VENV)/bin/activate"
 	@echo "            3) make check"
+	@echo ""
+	@echo "That installs what the shipped system needs to RUN against the"
+	@echo "committed artifacts. To rebuild them from the raw audio:"
+	@echo "            make setup-ingest   # adds a Whisper backend"
+
+# Extra dependencies only needed to rebuild artifacts/ from the audio.
+setup-ingest:
+	$(VENV)/bin/pip install -r requirements-ingest.txt
 
 check:
 	$(PY) scripts/check_setup.py

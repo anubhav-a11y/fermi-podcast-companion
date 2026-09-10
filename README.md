@@ -28,6 +28,14 @@ cases. See [EVAL.md](EVAL.md).
 
 ---
 
+## Hosted demo
+
+`app.py` + [DEPLOY.md](DEPLOY.md) deploy this to Streamlit Community Cloud
+in about five minutes (measured peak memory ~415 MB, inside their limit).
+The hosted copy serves committed 24 kbps audio so click-to-play citations
+work, and sits behind a shared password because each question spends API
+credit and the index holds transcripts of audio that is not mine to publish.
+
 ## Quickstart
 
 ### 0. Verify the plumbing first (no API keys, no audio, ~15 seconds)
