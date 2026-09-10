@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# Supplied audio is not ours to redistribute.
+data/audio/*
+!data/audio/.gitkeep
+
+# Derived artifacts are committed (see README) so the system runs without
+# re-transcribing. Uncomment to exclude them instead.
+# artifacts/*.json
+# artifacts/*.npy
+artifacts_fixture/

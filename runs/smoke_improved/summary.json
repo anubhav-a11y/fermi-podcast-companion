@@ -1,0 +1,139 @@
+{
+  "n_cases": 15,
+  "mean_case_score": 0.905,
+  "mean_helpfulness": 4.0,
+  "fully_passing_cases": 7,
+  "metrics": {
+    "citation_validity": {
+      "n": 15,
+      "passed": 15,
+      "pass_rate": 1.0
+    },
+    "has_citation": {
+      "n": 15,
+      "passed": 15,
+      "pass_rate": 1.0
+    },
+    "retrieval_recall": {
+      "n": 10,
+      "passed": 10,
+      "pass_rate": 1.0
+    },
+    "abstention_correct": {
+      "n": 15,
+      "passed": 14,
+      "pass_rate": 0.933
+    },
+    "must_mention": {
+      "n": 5,
+      "passed": 0,
+      "pass_rate": 0.0
+    },
+    "must_not_mention": {
+      "n": 0,
+      "pass_rate": null
+    },
+    "intent_correct": {
+      "n": 7,
+      "passed": 5,
+      "pass_rate": 0.714
+    },
+    "groundedness": {
+      "n": 15,
+      "passed": 15,
+      "pass_rate": 1.0
+    }
+  },
+  "by_case_type": {
+    "clarify_previous": 1.0,
+    "cross_episode_compare": 0.916,
+    "episode_routing": 0.9,
+    "locate_audio": 1.0,
+    "out_of_scope": 0.875,
+    "passage_qa": 0.865
+  },
+  "failures": [
+    {
+      "case_id": "fx_qa_more_is_different",
+      "failed": [
+        "must_mention"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_qa_bcs",
+      "failed": [
+        "must_mention"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_qa_decoherence",
+      "failed": [
+        "must_mention"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_qa_no_cloning",
+      "failed": [
+        "must_mention"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_qa_neutron_star_support",
+      "failed": [
+        "must_mention"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_route_beginner",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_compare_theory_experiment",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "stub judge always passes"
+    },
+    {
+      "case_id": "fx_oos_transformers",
+      "failed": [
+        "abstention_correct"
+      ],
+      "note": "stub judge always passes"
+    }
+  ],
+  "usage": {
+    "calls": 49,
+    "in_tokens": 13127,
+    "out_tokens": 1960,
+    "embed_texts": 0
+  },
+  "preset": "improved",
+  "settings": {
+    "name": "improved",
+    "use_bm25_hybrid": true,
+    "use_llm_router": true,
+    "use_query_rewrite": true,
+    "use_episode_index": true,
+    "use_per_episode_comparison": true,
+    "top_k": 6,
+    "per_episode_k": 3,
+    "rrf_k": 60,
+    "use_abstention": true,
+    "abstain_dense_threshold": 0.3,
+    "abstain_lexical_threshold": 0.18,
+    "citation_repair": true,
+    "temperature": 0.1,
+    "max_tokens": 1600
+  },
+  "cases_file": "eval/cases_fixture.yaml",
+  "timestamp": "2026-09-10T11:16:08"
+}

@@ -1,0 +1,154 @@
+{
+  "n_cases": 17,
+  "mean_case_score": 0.813,
+  "mean_helpfulness": null,
+  "fully_passing_cases": 8,
+  "metrics": {
+    "citation_validity": {
+      "n": 17,
+      "passed": 14,
+      "pass_rate": 0.824
+    },
+    "has_citation": {
+      "n": 17,
+      "passed": 15,
+      "pass_rate": 0.882
+    },
+    "retrieval_recall": {
+      "n": 13,
+      "passed": 11,
+      "pass_rate": 0.846
+    },
+    "abstention_correct": {
+      "n": 17,
+      "passed": 16,
+      "pass_rate": 0.941
+    },
+    "must_mention": {
+      "n": 10,
+      "passed": 10,
+      "pass_rate": 1.0
+    },
+    "must_not_mention": {
+      "n": 3,
+      "passed": 3,
+      "pass_rate": 1.0
+    },
+    "intent_correct": {
+      "n": 15,
+      "passed": 6,
+      "pass_rate": 0.4
+    },
+    "groundedness": {
+      "n": 0,
+      "pass_rate": null
+    }
+  },
+  "by_case_type": {
+    "clarify_previous": 0.75,
+    "cross_episode_compare": 0.711,
+    "episode_routing": 0.744,
+    "locate_audio": 0.2,
+    "out_of_scope": 0.917,
+    "passage_qa": 1.0
+  },
+  "failures": [
+    {
+      "case_id": "route_entropy",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "route_beginner_order",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "route_curved_spacetime",
+      "failed": [
+        "citation_validity",
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "compare_entropy_two_senses",
+      "failed": [
+        "citation_validity",
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "compare_fundamental_limits",
+      "failed": [
+        "abstention_correct",
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "compare_two_einstein_episodes",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "followup_simplify",
+      "failed": [
+        "has_citation",
+        "retrieval_recall",
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "locate_photo51",
+      "failed": [
+        "citation_validity",
+        "has_citation",
+        "retrieval_recall",
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "oos_plate_tectonics",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "judge disabled"
+    }
+  ],
+  "usage": {
+    "calls": 20,
+    "in_tokens": 64791,
+    "out_tokens": 4242,
+    "embed_texts": 20
+  },
+  "preset": "abl_hybrid",
+  "settings": {
+    "name": "abl_hybrid",
+    "use_bm25_hybrid": true,
+    "use_llm_router": false,
+    "use_query_rewrite": false,
+    "use_episode_index": false,
+    "use_per_episode_comparison": false,
+    "top_k": 6,
+    "per_episode_k": 3,
+    "rrf_k": 60,
+    "use_abstention": false,
+    "abstain_dense_threshold": 0.3,
+    "abstain_lexical_threshold": 0.18,
+    "citation_repair": false,
+    "temperature": 0.1,
+    "max_tokens": 1600
+  },
+  "cases_file": "/Users/anubhav/Downloads/fermi-podcast-companion/eval/cases.yaml",
+  "timestamp": "2026-09-10T10:38:16"
+}

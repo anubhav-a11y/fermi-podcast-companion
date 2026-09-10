@@ -1,0 +1,100 @@
+# Cases for the OFFLINE FIXTURE corpus only (scripts/make_fixture.py).
+# Gold labels here are real, because the fixture text is known — which makes
+# this suite a plumbing test: it proves the harness, metrics and comparison
+# actually work before you spend anything on the real audio.
+#
+# Do NOT report these numbers as your results. Report eval/cases.yaml against
+# the real supplied episodes.
+
+cases:
+  - id: fx_qa_more_is_different
+    type: passage_qa
+    query: "What does 'more is different' mean? Explain it simply."
+    expect_intent: passage_qa
+    expect_episodes: [E1]
+    must_mention: [["emergent", "emergence", "collective"]]
+
+  - id: fx_qa_bcs
+    type: passage_qa
+    query: "How did Bardeen, Cooper and Schrieffer explain superconductivity?"
+    expect_episodes: [E1]
+    type_note: pairing mechanism sits around 200-260s
+    must_mention: [["pair", "lattice"]]
+
+  - id: fx_qa_decoherence
+    type: passage_qa
+    query: "What is decoherence and why does it make quantum computing hard?"
+    expect_episodes: [E2]
+    must_mention: [["environment", "phase", "fragile"]]
+
+  - id: fx_qa_no_cloning
+    type: passage_qa
+    query: "Why is a quantum error harder to correct than a classical one?"
+    expect_episodes: [E2]
+    must_mention: [["cloning", "copy"]]
+
+  - id: fx_qa_neutron_star_support
+    type: passage_qa
+    query: "What holds a neutron star up against gravity?"
+    expect_episodes: [E3]
+    must_mention: [["degeneracy"]]
+
+  - id: fx_qa_unresolved
+    type: passage_qa
+    query: "Is there anything the speakers say is still unresolved?"
+    expect_episodes: []
+
+  - id: fx_route_superconductivity
+    type: episode_routing
+    query: "Which episode should I listen to if I want to understand superconductivity, and why?"
+    expect_intent: episode_routing
+    expect_episodes: [E1]
+
+  - id: fx_route_beginner
+    type: episode_routing
+    query: "I'm new to this. Where should I start and in what order?"
+    expect_intent: episode_routing
+
+  - id: fx_compare_noise
+    type: cross_episode_compare
+    query: "Compare what these episodes say about noise."
+    expect_intent: cross_episode_compare
+    expect_episodes: [E1, E2]
+
+  - id: fx_compare_theory_experiment
+    type: cross_episode_compare
+    query: "Do the episodes differ on whether theory or experiment leads?"
+    expect_intent: cross_episode_compare
+    expect_episodes: [E1, E3]
+
+  - id: fx_followup_simplify
+    type: clarify_previous
+    history:
+      - "What does 'more is different' mean?"
+    query: "I didn't follow that. Walk me through it step by step."
+    expect_intent: clarify_previous
+    expect_episodes: [E1]
+
+  - id: fx_followup_pronoun
+    type: clarify_previous
+    history:
+      - "What is decoherence?"
+    query: "And why is that harder to fix than a classical error?"
+    expect_episodes: [E2]
+
+  - id: fx_locate_audio
+    type: locate_audio
+    history:
+      - "What is the central claim of the first episode?"
+    query: "Take me to the part of the audio that supports that."
+    expect_intent: locate_audio
+
+  - id: fx_oos_hawking
+    type: out_of_scope
+    query: "Do these episodes explain Hawking radiation and black hole entropy?"
+    should_abstain: true
+
+  - id: fx_oos_transformers
+    type: out_of_scope
+    query: "What do these episodes say about training transformer models on GPUs?"
+    should_abstain: true

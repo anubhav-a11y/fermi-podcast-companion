@@ -1,0 +1,538 @@
+{
+  "episodes": [
+    {
+      "episode_id": "E1",
+      "file_title": "Great Papers 01 Einstein's Special Relativity",
+      "title": "Einstein's Special Relativity: Two Postulates Reshape Reality",
+      "summary": "This episode explores Einstein's 1905 paper on the electrodynamics of moving bodies, examining how two simple postulates\u2014the relativity of inertial frames and the constancy of light speed\u2014lead to counterintuitive consequences like time dilation, length contraction, and the equivalence of mass and energy. Ideal for anyone seeking to understand the conceptual foundations of special relativity beyond equations.",
+      "topics": [
+        "Relativity of simultaneity",
+        "Time dilation and moving clocks",
+        "Length contraction",
+        "Lorentz transformation",
+        "Speed of light as universal constant",
+        "Luminiferous ether and the Michelson-Morley experiment",
+        "Twin paradox",
+        "Velocity addition and the speed limit",
+        "Electromagnetic field unification",
+        "Mass-energy equivalence (E=mc\u00b2)",
+        "Doppler shift for light",
+        "Spacetime as four-dimensional continuum"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "Einstein's 1905 paper and its modest title"
+        },
+        {
+          "start_s": 60,
+          "label": "Two postulates and their radical consequences"
+        },
+        {
+          "start_s": 180,
+          "label": "The luminiferous ether and failed experiments"
+        },
+        {
+          "start_s": 300,
+          "label": "Postulate 1: Relativity of inertial frames"
+        },
+        {
+          "start_s": 540,
+          "label": "Postulate 2: Constancy of light speed"
+        },
+        {
+          "start_s": 750,
+          "label": "Simultaneity is relative: the train thought experiment"
+        },
+        {
+          "start_s": 1050,
+          "label": "Time dilation: moving clocks run slow"
+        },
+        {
+          "start_s": 1320,
+          "label": "Length contraction and the muon decay experiment"
+        },
+        {
+          "start_s": 1440,
+          "label": "The Lorentz transformation as frame translation"
+        },
+        {
+          "start_s": 1560,
+          "label": "Reciprocal time dilation and the twin paradox"
+        },
+        {
+          "start_s": 1980,
+          "label": "Speed of light as geometric limit, not mechanical barrier"
+        },
+        {
+          "start_s": 2280,
+          "label": "Unification of electricity and magnetism"
+        },
+        {
+          "start_s": 2430,
+          "label": "Relativistic Doppler shift"
+        },
+        {
+          "start_s": 2670,
+          "label": "E=mc\u00b2 and mass-energy equivalence"
+        },
+        {
+          "start_s": 2820,
+          "label": "Spacetime as unified four-dimensional reality"
+        }
+      ],
+      "duration_s": 3134.01,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 01 - Einstein's Special Relativity.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    },
+    {
+      "episode_id": "E2",
+      "file_title": "Great Papers 02 How Black Holes Radiate, Hawking 1975",
+      "title": "Hawking Radiation: Black Holes Glow and Evaporate",
+      "summary": "This episode explores Hawking's 1974 discovery that black holes emit thermal radiation and gradually evaporate, resolving a paradox between general relativity and thermodynamics. It covers the classical black hole, the area theorem, Bekenstein entropy, quantum field theory in curved spacetime, and the information paradox. Suited for physicists and advanced students interested in black hole thermodynamics and quantum gravity.",
+      "topics": [
+        "Event horizon and classical black holes",
+        "Area theorem and black hole entropy",
+        "Second law of thermodynamics and generalized second law",
+        "Quantum vacuum and particle creation",
+        "Unruh effect and observer-dependent temperature",
+        "Hawking radiation spectrum and thermal emission",
+        "Negative energy and black hole mass loss",
+        "Surface gravity and horizon temperature",
+        "Information paradox and thermal radiation",
+        "Black hole thermodynamics laws",
+        "Planck scale and quantum gravity",
+        "Holography and entropy on surfaces"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "Hawking's revolutionary claim at 1974 conference"
+        },
+        {
+          "start_s": 150,
+          "label": "Classical black hole structure and event horizon"
+        },
+        {
+          "start_s": 346,
+          "label": "Area theorem and entropy analogy"
+        },
+        {
+          "start_s": 425,
+          "label": "Bekenstein's generalized second law"
+        },
+        {
+          "start_s": 738,
+          "label": "Quantum vacuum and particle-antiparticle pairs"
+        },
+        {
+          "start_s": 1000,
+          "label": "Observer-dependent definition of particles and temperature"
+        },
+        {
+          "start_s": 1227,
+          "label": "Hawking calculation: field mixing during collapse"
+        },
+        {
+          "start_s": 1458,
+          "label": "Thermal spectrum and gravitational redshift"
+        },
+        {
+          "start_s": 1647,
+          "label": "Pair creation mechanism and negative energy"
+        },
+        {
+          "start_s": 2035,
+          "label": "Temperature from surface gravity and Unruh effect"
+        },
+        {
+          "start_s": 2423,
+          "label": "Evaporation runaway and primordial black holes"
+        },
+        {
+          "start_s": 2632,
+          "label": "Observational challenges and analog experiments"
+        },
+        {
+          "start_s": 3039,
+          "label": "Information paradox and thermal radiation problem"
+        },
+        {
+          "start_s": 3430,
+          "label": "Four laws of black hole mechanics"
+        },
+        {
+          "start_s": 4242,
+          "label": "Entropy-area relation and holographic principle"
+        }
+      ],
+      "duration_s": 2716.52,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    },
+    {
+      "episode_id": "E3",
+      "file_title": "Great Papers 03 The Double Helix, Watson and Crick 1953",
+      "title": "Watson and Crick's Double Helix: Structure Solves Heredity",
+      "summary": "This episode traces how Watson and Crick solved the structure of DNA in 1953 by synthesizing three key clues: the chemical composition of bases, Chargaff's pairing rules, and Franklin's X-ray crystallography evidence. The speakers explain how the double helix structure elegantly solves two biological problems simultaneously\u2014information storage and faithful copying\u2014through complementary base pairing. The episode suits anyone interested in how a single structural insight revolutionized molecular biology and enabled modern genetics.",
+      "topics": [
+        "DNA structure and the double helix",
+        "Base pairing rules and complementarity",
+        "X-ray crystallography and diffraction patterns",
+        "Chargaff's rules and base ratios",
+        "Information storage in molecular sequences",
+        "DNA replication mechanism",
+        "Hydrogen bonding between bases",
+        "Major and minor grooves",
+        "Genetic code and protein synthesis",
+        "Rosalind Franklin's contributions"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "The 1953 Nature paper and its significance"
+        },
+        {
+          "start_s": 2,
+          "label": "What heredity requires: storage and copying"
+        },
+        {
+          "start_s": 5,
+          "label": "Historical context from Mendel to chromosomes"
+        },
+        {
+          "start_s": 7,
+          "label": "Chemical clues: sugar-phosphate backbone and four bases"
+        },
+        {
+          "start_s": 9,
+          "label": "Chargaff's rules: A equals T, G equals C"
+        },
+        {
+          "start_s": 11,
+          "label": "Franklin's X-ray crystallography evidence for helical structure"
+        },
+        {
+          "start_s": 16,
+          "label": "Building the model: two antiparallel strands and base pairing"
+        },
+        {
+          "start_s": 18,
+          "label": "The pairing rule: matching base sizes and hydrogen bonding"
+        },
+        {
+          "start_s": 23,
+          "label": "Complementarity as the key to replication"
+        },
+        {
+          "start_s": 28,
+          "label": "GC versus AT stability and Meselson-Stahl confirmation"
+        },
+        {
+          "start_s": 32,
+          "label": "From sequence to protein: the genetic code"
+        },
+        {
+          "start_s": 39,
+          "label": "Rosalind Franklin's underrecognized contributions"
+        }
+      ],
+      "duration_s": 2596.02,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    },
+    {
+      "episode_id": "E4",
+      "file_title": "Great Papers 04 Shannon and the Birth of Information, 1948",
+      "title": "Shannon's Mathematical Theory of Communication, 1948",
+      "summary": "This episode explores Claude Shannon's foundational 1948 paper that quantified information through the concepts of bits and entropy, establishing the mathematical framework for all digital communication. It covers how Shannon unified telegraph, telephone, and radio engineering by treating information as measurable uncertainty rather than meaning. The episode suits anyone interested in the origins of information theory, digital technology, data compression, error correction, and the deep mathematical principles underlying modern communication systems.",
+      "topics": [
+        "bit as unit of information",
+        "entropy and uncertainty measurement",
+        "source coding and compression",
+        "channel capacity theorem",
+        "error correction over noisy channels",
+        "redundancy and error detection",
+        "information vs. semantics",
+        "Landauer's principle and thermodynamic entropy",
+        "parity bits and coding theory",
+        "signal-to-noise ratio and bandwidth"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "Shannon's 1948 paper and its significance"
+        },
+        {
+          "start_s": 133,
+          "label": "Defining the bit and entropy"
+        },
+        {
+          "start_s": 213,
+          "label": "State of communication technology before Shannon"
+        },
+        {
+          "start_s": 413,
+          "label": "Separating meaning from engineering problem"
+        },
+        {
+          "start_s": 522,
+          "label": "Information as uncertainty removal"
+        },
+        {
+          "start_s": 643,
+          "label": "The bit: halving and binary choices"
+        },
+        {
+          "start_s": 943,
+          "label": "Entropy borrowed from thermodynamics"
+        },
+        {
+          "start_s": 1600,
+          "label": "Source coding theorem and compression limits"
+        },
+        {
+          "start_s": 2025,
+          "label": "Noisy channels and error correction"
+        },
+        {
+          "start_s": 2304,
+          "label": "Channel capacity theorem and bandwidth limits"
+        },
+        {
+          "start_s": 3138,
+          "label": "Applications across digital technology and DNA"
+        }
+      ],
+      "duration_s": 2392.42,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    },
+    {
+      "episode_id": "E5",
+      "file_title": "Great Papers 05 Attention Is All You Need, 2017",
+      "title": "Attention Is All You Need: The Transformer Architecture",
+      "summary": "This episode explores the 2017 Google paper that introduced the Transformer architecture, replacing sequential recurrent neural networks with pure attention mechanisms. It explains how attention allows parallel processing of language by letting each word query all others simultaneously, eliminating distance-based degradation. The episode suits anyone interested in understanding the foundational architecture behind modern large language models.",
+      "topics": [
+        "Attention mechanism",
+        "Transformer architecture",
+        "Recurrent neural networks and their limitations",
+        "Query-key-value attention",
+        "Multi-head attention",
+        "Positional encoding",
+        "Parallelization in neural networks",
+        "Language modeling and next-word prediction",
+        "BERT and GPT training approaches",
+        "Scaling laws and computational efficiency"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "Introduction to the 2017 paper"
+        },
+        {
+          "start_s": 1,
+          "label": "What the paper invented"
+        },
+        {
+          "start_s": 2,
+          "label": "Why language requires sequential processing"
+        },
+        {
+          "start_s": 3,
+          "label": "Problems with recurrent neural networks"
+        },
+        {
+          "start_s": 7,
+          "label": "The attention mechanism concept"
+        },
+        {
+          "start_s": 9,
+          "label": "Query-key-value attention explained"
+        },
+        {
+          "start_s": 12,
+          "label": "Eliminating distance as an obstacle"
+        },
+        {
+          "start_s": 15,
+          "label": "Real-world example: pronoun resolution"
+        },
+        {
+          "start_s": 17,
+          "label": "Parallelism and scalability"
+        },
+        {
+          "start_s": 19,
+          "label": "Multi-head attention for different relationships"
+        },
+        {
+          "start_s": 20,
+          "label": "Positional encoding to preserve word order"
+        },
+        {
+          "start_s": 24,
+          "label": "BERT and GPT applications"
+        },
+        {
+          "start_s": 25,
+          "label": "Scaling behavior and training efficiency"
+        },
+        {
+          "start_s": 28,
+          "label": "Role of compute and hardware"
+        },
+        {
+          "start_s": 30,
+          "label": "Quadratic complexity and practical limitations"
+        },
+        {
+          "start_s": 31,
+          "label": "Unintended consequences of architectural choices"
+        }
+      ],
+      "duration_s": 2184.04,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 05 - Attention Is All You Need, 2017.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    },
+    {
+      "episode_id": "E6",
+      "file_title": "Great Papers 06 General Relativity, Einstein 1915",
+      "title": "Einstein's General Relativity: Gravity as Curved Spacetime",
+      "summary": "This episode traces Einstein's 1915 theory of general relativity, starting from loose threads in special relativity and culminating in the field equations that describe gravity as spacetime curvature rather than force. It covers the equivalence principle, the metric tensor, and three experimental confirmations including Mercury's orbit precession, starlight bending, and gravitational waves. Ideal for those seeking to understand how Einstein unified gravity with relativity and the experimental evidence supporting the theory.",
+      "topics": [
+        "equivalence principle",
+        "spacetime curvature",
+        "metric tensor",
+        "Einstein field equations",
+        "Mercury's orbit precession",
+        "gravitational lensing",
+        "gravitational time dilation",
+        "Schwarzschild solution",
+        "black holes",
+        "gravitational waves",
+        "GPS relativity corrections"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "Special relativity's loose threads"
+        },
+        {
+          "start_s": 139,
+          "label": "Gravity and the speed of light problem"
+        },
+        {
+          "start_s": 333,
+          "label": "Einstein's equivalence principle insight"
+        },
+        {
+          "start_s": 420,
+          "label": "Free fall and weightlessness"
+        },
+        {
+          "start_s": 627,
+          "label": "Light bending in accelerated frames"
+        },
+        {
+          "start_s": 844,
+          "label": "Gravitational time dilation from clocks"
+        },
+        {
+          "start_s": 1123,
+          "label": "Gravity as geometry, not force"
+        },
+        {
+          "start_s": 1543,
+          "label": "Equivalence principle limitations and tidal forces"
+        },
+        {
+          "start_s": 1722,
+          "label": "Einstein field equations explained"
+        },
+        {
+          "start_s": 2146,
+          "label": "Three experimental tests and confirmations"
+        },
+        {
+          "start_s": 2839,
+          "label": "Black holes, gravitational waves, and applications"
+        }
+      ],
+      "duration_s": 2028.04,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 06 - General Relativity, Einstein 1915.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    },
+    {
+      "episode_id": "E7",
+      "file_title": "Great Papers 07 On Computable Numbers, Turing 1936",
+      "title": "Turing's Computable Numbers: Machines, Logic, and Limits",
+      "summary": "This episode explores Turing's 1936 paper on computable numbers, which introduced the theoretical machine that became the blueprint for all modern computers. It covers how Turing formalized the concept of mechanical computation to address Hilbert's foundational program in mathematics, and demonstrates fundamental limits on what machines can compute. Suited for those interested in computability theory, mathematical logic, and the theoretical foundations of computing.",
+      "topics": [
+        "Hilbert's program and mathematical foundations",
+        "G\u00f6del's incompleteness theorem",
+        "Turing machines and mechanical computation",
+        "Computable numbers and decimal expansion",
+        "Cantor's uncountability argument",
+        "The halting problem",
+        "Universal machines and stored programs",
+        "Busy beaver numbers and uncomputability",
+        "Entscheidungsproblem",
+        "P vs NP problem"
+      ],
+      "outline": [
+        {
+          "start_s": 0,
+          "label": "Introduction: From stars to tape and machines"
+        },
+        {
+          "start_s": 1,
+          "label": "Hilbert's dream: completeness, consistency, and mechanical proof"
+        },
+        {
+          "start_s": 4,
+          "label": "G\u00f6del's incompleteness theorem demolishes Hilbert's program"
+        },
+        {
+          "start_s": 6,
+          "label": "Defining mechanical procedure: what does computation really mean?"
+        },
+        {
+          "start_s": 7,
+          "label": "The human computer: reducing mathematics to symbol manipulation"
+        },
+        {
+          "start_s": 9,
+          "label": "Turing machine architecture: tape, head, and state tables"
+        },
+        {
+          "start_s": 13,
+          "label": "Computable numbers: infinite tape and infinite decimal expansion"
+        },
+        {
+          "start_s": 15,
+          "label": "Countable machines versus uncountable real numbers"
+        },
+        {
+          "start_s": 18,
+          "label": "Uncomputable numbers: busy beavers and beyond reach"
+        },
+        {
+          "start_s": 20,
+          "label": "Universal machine: program and data on the same tape"
+        },
+        {
+          "start_s": 24,
+          "label": "The halting problem and proof of uncomputability"
+        },
+        {
+          "start_s": 28,
+          "label": "Church-Turing thesis and the limits of computation"
+        }
+      ],
+      "duration_s": 1982.3,
+      "audio_path": "/Users/anubhav/Downloads/fermi-podcast-companion/data/audio/Great Papers 07 - On Computable Numbers, Turing 1936.mp3",
+      "asr_model": "whisper-large-v3-turbo"
+    }
+  ]
+}

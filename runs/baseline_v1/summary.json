@@ -1,0 +1,180 @@
+{
+  "n_cases": 17,
+  "mean_case_score": 0.782,
+  "mean_helpfulness": 4.17,
+  "fully_passing_cases": 5,
+  "metrics": {
+    "citation_validity": {
+      "n": 17,
+      "passed": 15,
+      "pass_rate": 0.882
+    },
+    "has_citation": {
+      "n": 17,
+      "passed": 15,
+      "pass_rate": 0.882
+    },
+    "retrieval_recall": {
+      "n": 13,
+      "passed": 11,
+      "pass_rate": 0.846
+    },
+    "abstention_correct": {
+      "n": 17,
+      "passed": 17,
+      "pass_rate": 1.0
+    },
+    "must_mention": {
+      "n": 10,
+      "passed": 8,
+      "pass_rate": 0.8
+    },
+    "must_not_mention": {
+      "n": 3,
+      "passed": 3,
+      "pass_rate": 1.0
+    },
+    "intent_correct": {
+      "n": 15,
+      "passed": 6,
+      "pass_rate": 0.4
+    },
+    "groundedness": {
+      "n": 17,
+      "passed": 10,
+      "pass_rate": 0.588
+    }
+  },
+  "by_case_type": {
+    "clarify_previous": 0.572,
+    "cross_episode_compare": 0.801,
+    "episode_routing": 0.69,
+    "locate_audio": 0.167,
+    "out_of_scope": 0.933,
+    "passage_qa": 0.943
+  },
+  "failures": [
+    {
+      "case_id": "qa_base_pairing",
+      "failed": [
+        "must_mention"
+      ],
+      "note": "Directly answers question with concrete evidence, well-pitched explanation of why the rule matters for copying fidelity."
+    },
+    {
+      "case_id": "qa_shannon_redundancy",
+      "failed": [
+        "groundedness"
+      ],
+      "note": "Excellent explanation of redundancy's dual role and structured coding. One claim about vowel deletion lacks passage support."
+    },
+    {
+      "case_id": "route_entropy",
+      "failed": [
+        "must_mention",
+        "intent_correct",
+        "groundedness"
+      ],
+      "note": "Passages only discuss E4. E2 existence and content are unsupported. Black hole entropy details unverified."
+    },
+    {
+      "case_id": "route_beginner_order",
+      "failed": [
+        "intent_correct",
+        "groundedness"
+      ],
+      "note": "Answer invents episode titles and numbers not mentioned in passage. Only E3 (DNA) is confirmed."
+    },
+    {
+      "case_id": "route_curved_spacetime",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "Directly answers the question with episode number, provides verbatim quotes from passages, and explains the core concept clearly."
+    },
+    {
+      "case_id": "compare_entropy_two_senses",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "Directly compares both uses with specific evidence, explains the connection, well-pitched to learner."
+    },
+    {
+      "case_id": "compare_fundamental_limits",
+      "failed": [
+        "intent_correct",
+        "groundedness"
+      ],
+      "note": "Excellent comparison of Shannon vs Turing limits. One claim misattributes a quote about decidability to Shannon when passages attribute it only to Turing."
+    },
+    {
+      "case_id": "compare_two_einstein_episodes",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "Directly answers the question with specific, well-sourced claims about how general relativity builds on special relativity, including the problem, solution, and"
+    },
+    {
+      "case_id": "followup_simplify",
+      "failed": [
+        "citation_validity",
+        "has_citation",
+        "retrieval_recall",
+        "intent_correct",
+        "groundedness"
+      ],
+      "note": "answer cited nothing; cannot be verified"
+    },
+    {
+      "case_id": "followup_pronoun",
+      "failed": [
+        "groundedness"
+      ],
+      "note": "Mostly accurate but misattributes halting problem proof to Turing alone; passages credit both Turing and Church."
+    },
+    {
+      "case_id": "locate_photo51",
+      "failed": [
+        "citation_validity",
+        "has_citation",
+        "retrieval_recall",
+        "intent_correct",
+        "groundedness"
+      ],
+      "note": "answer cited nothing; cannot be verified"
+    },
+    {
+      "case_id": "oos_plate_tectonics",
+      "failed": [
+        "intent_correct"
+      ],
+      "note": "abstained; nothing to ground"
+    }
+  ],
+  "usage": {
+    "calls": 32,
+    "in_tokens": 77978,
+    "out_tokens": 5409,
+    "embed_texts": 20
+  },
+  "preset": "baseline",
+  "settings": {
+    "name": "baseline",
+    "use_bm25_hybrid": false,
+    "use_llm_router": false,
+    "use_query_rewrite": false,
+    "use_episode_index": false,
+    "use_per_episode_comparison": false,
+    "top_k": 6,
+    "per_episode_k": 3,
+    "rrf_k": 60,
+    "use_abstention": false,
+    "abstain_dense_threshold": 0.3,
+    "abstain_lexical_threshold": 0.18,
+    "citation_repair": false,
+    "temperature": 0.1,
+    "max_tokens": 1600
+  },
+  "cases_file": "/Users/anubhav/Downloads/fermi-podcast-companion/eval/cases.yaml",
+  "timestamp": "2026-09-10T10:11:52"
+}

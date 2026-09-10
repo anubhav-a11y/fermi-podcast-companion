@@ -1,0 +1,97 @@
+{
+  "n_cases": 17,
+  "mean_case_score": 0.978,
+  "mean_helpfulness": null,
+  "fully_passing_cases": 15,
+  "metrics": {
+    "citation_validity": {
+      "n": 17,
+      "passed": 16,
+      "pass_rate": 0.941
+    },
+    "has_citation": {
+      "n": 17,
+      "passed": 17,
+      "pass_rate": 1.0
+    },
+    "retrieval_recall": {
+      "n": 13,
+      "passed": 13,
+      "pass_rate": 1.0
+    },
+    "abstention_correct": {
+      "n": 17,
+      "passed": 16,
+      "pass_rate": 0.941
+    },
+    "must_mention": {
+      "n": 10,
+      "passed": 10,
+      "pass_rate": 1.0
+    },
+    "must_not_mention": {
+      "n": 3,
+      "passed": 3,
+      "pass_rate": 1.0
+    },
+    "intent_correct": {
+      "n": 15,
+      "passed": 15,
+      "pass_rate": 1.0
+    },
+    "groundedness": {
+      "n": 0,
+      "pass_rate": null
+    }
+  },
+  "by_case_type": {
+    "clarify_previous": 1.0,
+    "cross_episode_compare": 1.0,
+    "episode_routing": 0.878,
+    "locate_audio": 1.0,
+    "out_of_scope": 1.0,
+    "passage_qa": 1.0
+  },
+  "failures": [
+    {
+      "case_id": "route_entropy",
+      "failed": [
+        "citation_validity"
+      ],
+      "note": "judge disabled"
+    },
+    {
+      "case_id": "route_beginner_order",
+      "failed": [
+        "abstention_correct"
+      ],
+      "note": "judge disabled"
+    }
+  ],
+  "usage": {
+    "calls": 40,
+    "in_tokens": 70489,
+    "out_tokens": 6003,
+    "embed_texts": 18
+  },
+  "preset": "abl_rewrite",
+  "settings": {
+    "name": "abl_rewrite",
+    "use_bm25_hybrid": false,
+    "use_llm_router": true,
+    "use_query_rewrite": true,
+    "use_episode_index": false,
+    "use_per_episode_comparison": false,
+    "top_k": 6,
+    "per_episode_k": 3,
+    "rrf_k": 60,
+    "use_abstention": false,
+    "abstain_dense_threshold": 0.3,
+    "abstain_lexical_threshold": 0.18,
+    "citation_repair": false,
+    "temperature": 0.1,
+    "max_tokens": 1600
+  },
+  "cases_file": "/Users/anubhav/Downloads/fermi-podcast-companion/eval/cases.yaml",
+  "timestamp": "2026-09-10T10:42:55"
+}
