@@ -1,4 +1,4 @@
-.PHONY: help setup check fixture smoke ingest transcribe chunk enrich index peek run chat eval-baseline eval-improved eval report ablate clean-runs clean-artifacts
+.PHONY: help setup check fixture smoke ingest transcribe chunk enrich index peek run chat eval-baseline eval-improved eval report ablate audio-web clean-runs clean-artifacts
 
 PY ?= python
 VENV ?= .venv
@@ -26,6 +26,7 @@ help:
 	@echo "    make eval             baseline run, improved run, and the comparison"
 	@echo "    make report           re-print the comparison table"
 	@echo "    make ablate           per-mechanism attribution table (6 ablations)"
+	@echo "    make audio-web        24kbps copies for a hosted demo (53 MB)"
 	@echo ""
 
 # ------------------------------------------------------------------- setup
@@ -114,6 +115,19 @@ ablate:
 		$(PY) -m eval.run --preset $$p --no-judge || exit 1; \
 	done
 	$(PY) scripts/ablation_table.py --out runs/ablations.md
+
+# Low-bitrate copies for a hosted demo. 24 kbps mono keeps speech clearly
+# intelligible and durations byte-exact, so every timestamp in the index
+# stays valid, at 53 MB for 4h44m instead of 273 MB.
+audio-web:
+	@mkdir -p data/audio_web
+	@for f in data/audio/*.mp3; do \
+		out="data/audio_web/$$(basename "$$f")"; \
+		[ -f "$$out" ] && continue; \
+		echo "  $$(basename "$$f")"; \
+		ffmpeg -v error -y -i "$$f" -ac 1 -ar 22050 -b:a 24k "$$out"; \
+	done
+	@du -sh data/audio_web
 
 # ------------------------------------------------------------------- hygiene
 clean-runs:

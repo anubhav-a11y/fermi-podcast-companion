@@ -193,6 +193,35 @@ def get_preset(name: str) -> Settings:
     return PRESETS[name]
 
 
+# ------------------------------------------------------------------- audio
+# episodes.json stores the absolute path of the file that was transcribed,
+# which is right for local use and wrong everywhere else -- a deployed copy
+# has neither that user's home directory nor the 273 MB of originals. So
+# resolve by basename against a search path instead, preferring a committed
+# low-bitrate copy when one exists.
+#
+# The web copies are 24 kbps mono (53 MB for 4h44m vs 273 MB) with durations
+# preserved exactly, so every timestamp in the index stays valid.
+AUDIO_SEARCH_DIRS = [
+    ROOT / "data" / "audio",       # originals, gitignored
+    ROOT / "data" / "audio_web",   # committed, low bitrate
+]
+
+
+def resolve_audio(path_or_name: str | None) -> str | None:
+    """Absolute path to a playable file, or None if we cannot find one."""
+    if not path_or_name:
+        return None
+    p = Path(path_or_name)
+    if p.is_file():
+        return str(p)
+    for d in AUDIO_SEARCH_DIRS:
+        cand = d / p.name
+        if cand.is_file():
+            return str(cand)
+    return None
+
+
 def fmt_ts(seconds: float) -> str:
     """Seconds -> mm:ss (or h:mm:ss past an hour)."""
     seconds = max(0, int(round(seconds)))

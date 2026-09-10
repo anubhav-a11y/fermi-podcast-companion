@@ -8,6 +8,7 @@ an answer against the original audio in one click.
 
 from __future__ import annotations
 
+import hmac
 import os
 import sys
 from pathlib import Path
@@ -21,6 +22,43 @@ from src.app import llm  # noqa: E402
 from src.app.session import Companion  # noqa: E402
 
 st.set_page_config(page_title="Fermi Podcast Companion", page_icon="🎧", layout="centered")
+
+
+def _gate() -> None:
+    """Optional shared-password gate, active only when a password is set.
+
+    Needed for a hosted copy for two reasons that have nothing to do with
+    security theatre: the app spends real API credit on every turn, and the
+    index contains full transcripts of audio that belongs to Fermi, not to
+    this repo. Locally no password is configured and this is a no-op.
+    """
+    expected = os.environ.get("FERMI_APP_PASSWORD")
+    if not expected:
+        try:                                    # st.secrets raises if absent
+            expected = st.secrets.get("FERMI_APP_PASSWORD")
+        except Exception:
+            expected = None
+    if not expected:
+        return
+
+    if st.session_state.get("_authed"):
+        return
+
+    st.title("🎧 Fermi Podcast Companion")
+    st.caption("This demo is password-protected because it spends API credit "
+               "per question and indexes audio that is not mine to publish.")
+    with st.form("gate"):
+        given = st.text_input("Access password", type="password")
+        if st.form_submit_button("Enter"):
+            if hmac.compare_digest(given.strip(), expected.strip()):
+                st.session_state["_authed"] = True
+                st.rerun()
+            else:
+                st.error("Incorrect password.")
+    st.stop()
+
+
+_gate()
 
 
 @st.cache_resource(show_spinner="Loading index ...")
@@ -74,12 +112,13 @@ def render_sources(sources: list[dict]) -> None:
                 f"· {config.fmt_ts(s['start_s'])}–{config.fmt_ts(s['end_s'])} "
                 f"· dense `{s['dense']:.3f}` lex `{s['lexical']:.3f}`")
             st.caption(s["text"])
-            path = ep.get("audio_path")
-            if path and os.path.exists(path):
+            path = config.resolve_audio(ep.get("audio_path"))
+            if path:
                 st.audio(path, start_time=int(s["start_s"]))
             else:
-                st.caption("_(audio file not found on this machine — "
-                           "check data/audio/)_")
+                st.caption("_(audio file not found — put the episode files in "
+                           "`data/audio/`, or run `make audio-web` to build "
+                           "the committed low-bitrate copies)_")
             st.divider()
 
 

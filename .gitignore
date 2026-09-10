@@ -4,9 +4,14 @@ __pycache__/
 .env
 .DS_Store
 
-# Supplied audio is not ours to redistribute.
+# The supplied originals are not ours to redistribute (273 MB).
 data/audio/*
 !data/audio/.gitkeep
+
+# The 24 kbps copies ARE committed, so a hosted demo can play citations.
+# They live in a private repo behind a password gate for the same reason
+# the originals are excluded -- see _gate() in src/app/ui.py.
+!data/audio_web/
 
 # Derived artifacts are committed (see README) so the system runs without
 # re-transcribing. Uncomment to exclude them instead.

@@ -136,7 +136,7 @@ class Companion:
         for src in (s for s in (self.last_hits or []) ):
             if src.label == label:
                 ep = self.corpus.episode_by_id.get(src.chunk["episode_id"], {})
-                return {"audio_path": ep.get("audio_path"),
+                return {"audio_path": config.resolve_audio(ep.get("audio_path")),
                         "start_s": src.chunk["start_s"],
                         "end_s": src.chunk["end_s"],
                         "episode_title": ep.get("title", src.chunk["episode_title"])}

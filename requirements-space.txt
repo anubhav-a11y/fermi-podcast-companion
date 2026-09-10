@@ -1,0 +1,17 @@
+# Hosted-demo dependencies. Deliberately narrower than requirements.txt:
+# only the providers the deployed copy actually uses, and the CPU-only torch
+# wheel (~200 MB rather than ~2 GB) since embeddings run on CPU.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+numpy>=1.26
+python-dotenv>=1.0
+PyYAML>=6.0
+streamlit>=1.36
+rank-bm25>=0.2
+
+# chat: OpenRouter speaks the OpenAI wire protocol
+openai>=1.40
+
+# embeddings: all-MiniLM-L6-v2, 384-dim, matches the committed index
+torch>=2.2
+sentence-transformers>=3.0
