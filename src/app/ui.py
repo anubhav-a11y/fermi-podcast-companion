@@ -66,9 +66,16 @@ def get_companion(preset: str) -> Companion:
     return Companion(settings=config.get_preset(preset))
 
 
-preset = st.sidebar.selectbox("Preset", sorted(config.PRESETS), index=1,
-                              help="baseline = naive RAG; improved = routed hybrid "
-                                   "retrieval with abstention")
+# Order the two headline presets first and select `improved` by name. This
+# used to be `index=1` into sorted(PRESETS), which silently started
+# selecting an ablation preset when the six abl_* presets were added.
+_PRESET_ORDER = ["improved", "baseline"] + sorted(
+    p for p in config.PRESETS if p not in ("improved", "baseline"))
+preset = st.sidebar.selectbox(
+    "Preset", _PRESET_ORDER, index=0,
+    help="improved = routed hybrid retrieval with abstention (the shipped "
+         "system); baseline = naive RAG; abl_* flip one flag each, for "
+         "attribution — see EVAL.md")
 comp = get_companion(preset)
 
 st.title("🎧 Fermi Podcast Companion")

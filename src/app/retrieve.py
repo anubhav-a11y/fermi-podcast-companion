@@ -102,6 +102,7 @@ class Corpus:
             if self.chunk_vecs.shape[0] != len(self.chunks):
                 raise SystemExit("Index is stale (embedding rows != chunks). "
                                  "Re-run: make index")
+            self._check_embed_match()
         else:
             self.chunk_vecs = None
             self.ep_vecs = None
@@ -111,6 +112,31 @@ class Corpus:
         self._ep_bm25 = _BM25([tokenize(f"{e.get('title','')} {e.get('summary','')} "
                                         f"{' '.join(e.get('topics', []))}")
                                for e in self.episodes]) if self.episodes else None
+
+    def _check_embed_match(self) -> None:
+        """Fail loudly if the configured query embedder is not the one that
+        built the index.
+
+        Query and document vectors have to come from the same model to be
+        comparable. When they do not, `_dense_scores` sees a width mismatch,
+        returns zeros, and the system quietly falls back to lexical-only
+        retrieval -- answers get worse with no error anywhere. That is
+        exactly what happened on the first hosted deploy, where the provider
+        setting did not reach config and defaulted to a different model.
+        """
+        want_provider = str(self.meta.get("embed_provider", "")).lower()
+        want_model = str(self.meta.get("embed_model", ""))
+        have_provider = config.EMBED_PROVIDER
+        if not want_provider or want_provider == have_provider:
+            return
+        raise SystemExit(
+            f"Embedding provider mismatch: the index in {config.ARTIFACT_DIR} was "
+            f"built with {want_provider}/{want_model}, but "
+            f"FERMI_EMBED_PROVIDER={have_provider!r}. Query vectors from a "
+            f"different model are not comparable with these document vectors.\n"
+            f"Either set FERMI_EMBED_PROVIDER={want_provider} (the committed "
+            f"index), or re-embed with `make index` under the provider you want."
+        )
 
     # ------------------------------------------------------------- internals
     def _dense_scores(self, query: str, matrix) -> np.ndarray:

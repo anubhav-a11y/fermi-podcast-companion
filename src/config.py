@@ -51,7 +51,11 @@ LLM_PROVIDER = os.getenv("FERMI_LLM_PROVIDER", "anthropic").lower()
 # Embedding provider: openai | gemini | local | none
 #   local -> sentence-transformers (all-MiniLM-L6-v2), no API cost
 #   none  -> skip dense retrieval entirely; system falls back to BM25 only
-EMBED_PROVIDER = os.getenv("FERMI_EMBED_PROVIDER", "openai").lower()
+# Defaults match the committed index (artifacts/index_meta.json says
+# local/all-MiniLM-L6-v2, 384-dim). A different provider here produces
+# query vectors of a different width or geometry, which silently
+# degraded retrieval to lexical-only -- see Corpus._check_embed_match.
+EMBED_PROVIDER = os.getenv("FERMI_EMBED_PROVIDER", "local").lower()
 
 # Transcription provider: local (faster-whisper) | groq
 ASR_PROVIDER = os.getenv("FERMI_ASR_PROVIDER", "local").lower()
